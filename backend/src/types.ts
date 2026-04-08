@@ -1,0 +1,31 @@
+export interface Service {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  startingPrice: number;
+  turnaround: string;
+}
+
+export interface Testimonial {
+  id: number;
+  customerName: string;
+  neighborhood: string;
+  quote: string;
+  rating: number;
+}
+
+export interface BookingRequestBody {
+  fullName: string;
+  email: string;
+  phone: string;
+  serviceId: number;
+  preferredDate: string;
+  details: string;
+}
+
+export interface BookingRecord extends BookingRequestBody {
+  id: number;
+  status: "pending" | "confirmed";
+  createdAt: string;
+}

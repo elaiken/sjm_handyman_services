@@ -42,6 +42,20 @@ cd ../backend && npm run dev
 
 The frontend expects the backend at `http://localhost:4000`.
 
+## Vercel Deployment
+
+This repository includes a root `vercel.json` configured for Vercel Services:
+
+- `frontend` is mounted at `/`
+- `backend` is mounted at `/backend`
+
+Because of that, the frontend API client uses:
+
+- local development: `http://localhost:4000/api`
+- Vercel production: `/backend/api`
+
+You can override the API base URL with `VITE_API_URL` if you later deploy the backend somewhere else.
+
 ## Interview Talking Points
 
 - Why TypeScript interfaces are shared conceptually across the frontend and backend

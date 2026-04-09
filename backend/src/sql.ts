@@ -30,7 +30,7 @@ CREATE TABLE bookings (
 );
 `;
 
-export const interviewQueries = {
+export const bookingQueries = {
   listServices: `
     SELECT id, title, category, description, starting_price, turnaround
     FROM services

@@ -1,18 +1,20 @@
 # Backend Notes
 
-This backend uses in-memory arrays for immediate practice, but it also includes SQL schema and interview queries so you can upgrade it to a real database.
+The current backend uses in-memory arrays for service, testimonial, and booking
+data. This keeps deployment simple while the site content and booking flow are
+being finalized.
 
-## What to Explain in an Interview
+## Current Responsibilities
 
-- `server.ts` handles HTTP concerns and delegates validation logic.
-- `validation.ts` keeps business validation out of route handlers.
-- `sql.ts` shows how the current data model maps to relational tables.
-- The next production step would be a repository layer that executes SQL with a database driver.
+- `server.ts` defines the API routes.
+- `validation.ts` validates booking requests before they are accepted.
+- `sql.ts` contains a draft relational schema for future database integration.
 
-## Strong Next Step
+## Next Backend Upgrade
 
-Replace the in-memory `bookings` array with SQLite or PostgreSQL and create:
+When the project is ready for persistent storage, replace the in-memory
+`bookings` array with SQLite or PostgreSQL and add:
 
-- `db.ts` for the connection
-- `repositories/bookingsRepository.ts` for SQL execution
-- `services/bookingsService.ts` for business rules
+- `db.ts` for the database connection
+- `repositories/bookingsRepository.ts` for queries
+- `services/bookingsService.ts` for booking rules

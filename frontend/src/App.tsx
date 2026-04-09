@@ -16,9 +16,9 @@ const initialForm: BookingRequest = {
 };
 
 const reasons = [
-  "Fast turnaround for repairs that cannot wait all week",
-  "Straightforward estimates with clear job scope",
-  "A booking experience that feels dependable on phone, tablet, and desktop"
+  "Prompt scheduling and clear communication",
+  "Quality workmanship for repairs and installs",
+  "Respectful, clean service from start to finish"
 ];
 
 const serviceAreas = [
@@ -32,26 +32,26 @@ const serviceAreas = [
 
 const processSteps = [
   {
-    title: "Request a Quote",
+    title: "Tell Us About the Job",
     description:
-      "Homeowners submit the job details, preferred date, and contact info in a single form."
+      "Share the repair, installation, or maintenance work you need and when you would like service."
   },
   {
-    title: "Review and Confirm",
+    title: "Receive Your Estimate",
     description:
-      "SJM reviews the request, confirms scope, and provides a clean estimate with scheduling options."
+      "We review the request, confirm the details, and follow up with pricing and scheduling options."
   },
   {
-    title: "Get the Job Done",
+    title: "Get It Done Right",
     description:
-      "The work is completed with a focus on communication, punctuality, and a clean finish."
+      "SJM Handyman Services arrives ready to complete the work with care, efficiency, and professionalism."
   }
 ];
 
 const trustPoints = [
-  "Responsive communication from estimate to completion",
-  "Practical repair work for homes, rentals, and small property needs",
-  "Built to scale later into admin dashboards, status tracking, and analytics"
+  "Drywall patching, fixture installs, mounting, caulking, and punch-list repairs",
+  "Flexible appointment requests for homeowners, rental properties, and small maintenance jobs",
+  "Serving local neighborhoods with dependable scheduling and straightforward pricing"
 ];
 
 function App() {
@@ -78,7 +78,7 @@ function App() {
           serviceId: serviceData[0]?.id ?? 1
         }));
       } catch {
-        setError("Could not load the application data.");
+        setError("We could not load service information right now.");
       } finally {
         setIsLoading(false);
       }
@@ -101,7 +101,7 @@ function App() {
         serviceId: services[0]?.id ?? 1
       });
     } catch {
-      setError("Booking request failed. Check the backend and try again.");
+      setError("Your request could not be submitted. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -115,54 +115,56 @@ function App() {
             <span className="brand-mark">SJM</span>
             <div>
               <p>SJM Handyman Services</p>
-              <span>Repairs, installs, upkeep, and reliable turnaround</span>
+              <span>Reliable repairs, installs, and home upkeep</span>
             </div>
           </div>
           <div className="topbar-links">
             <a href="#services">Services</a>
             <a href="#areas">Service Areas</a>
             <a href="#booking" className="cta-link">
-              Book a Visit
+              Request an Estimate
             </a>
           </div>
         </nav>
 
         <div className="hero-grid">
           <section className="hero-copy">
-            <p className="eyebrow">SJM Handyman Services</p>
-            <h1>Home repairs and installs without the usual scheduling friction.</h1>
+            <p className="eyebrow">Trusted Local Handyman Service</p>
+            <h1>Home repairs and installations handled with care.</h1>
             <p className="hero-text">
-              This build gives SJM Handyman Services a modern, mobile-friendly
-              booking site while giving you a project that demonstrates React,
-              TypeScript, Node, API design, validation, and SQL-backed thinking.
+              SJM Handyman Services helps homeowners and property managers take
+              care of the jobs that keep a home safe, functional, and looking
+              its best. From repairs and mounting to finish work and routine
+              upkeep, every request starts with a clear estimate and dependable
+              communication.
             </p>
             <div className="hero-actions">
               <a href="#booking" className="primary-button">
-                Request an Estimate
+                Book a Visit
               </a>
-              <a href="#stack" className="secondary-button">
-                View Project Stack
+              <a href="#services" className="secondary-button">
+                View Services
               </a>
             </div>
 
             <div className="hero-strip">
               <div>
-                <strong>Same-week</strong>
-                <span>availability on common repairs</span>
+                <strong>Fast response</strong>
+                <span>for common home repair requests</span>
               </div>
               <div>
-                <strong>Mobile-first</strong>
-                <span>design for real customer traffic</span>
+                <strong>Clear estimates</strong>
+                <span>before work is scheduled</span>
               </div>
               <div>
-                <strong>Full-stack</strong>
-                <span>frontend, API, and SQL story</span>
+                <strong>Local service</strong>
+                <span>for homes and small property needs</span>
               </div>
             </div>
           </section>
 
           <aside className="hero-card">
-            <p className="card-title">Why this site works</p>
+            <p className="card-title">Why homeowners choose SJM</p>
             <ul>
               {reasons.map((reason) => (
                 <li key={reason}>{reason}</li>
@@ -175,7 +177,7 @@ function App() {
               </div>
               <div>
                 <strong>24h</strong>
-                <span>quote response target</span>
+                <span>quote response goal</span>
               </div>
             </div>
           </aside>
@@ -183,31 +185,31 @@ function App() {
       </header>
 
       <main>
-        <section id="stack" className="section info-band">
+        <section className="section info-band">
           <div>
-            <p className="eyebrow">Project Value</p>
-            <h2>Client-ready presentation with interview-ready architecture.</h2>
+            <p className="eyebrow">About SJM</p>
+            <h2>Dependable help for the projects that keep a home running well.</h2>
           </div>
           <div className="info-grid">
             <article>
-              <h3>Typed UI State</h3>
+              <h3>Repair Work</h3>
               <p>
-                React components manage typed service, testimonial, and booking
-                data with clean loading and submit states.
+                Small to mid-sized repair jobs handled efficiently with
+                attention to detail and a clean finish.
               </p>
             </article>
             <article>
-              <h3>Validation Flow</h3>
+              <h3>Installations</h3>
               <p>
-                The booking form mirrors real full-stack work: collect input,
-                validate it, send it, and handle success or failure clearly.
+                Fixtures, mounting, shelving, and hardware installs completed
+                with practical recommendations and dependable workmanship.
               </p>
             </article>
             <article>
-              <h3>SQL Thinking</h3>
+              <h3>Maintenance Support</h3>
               <p>
-                The backend includes relational schema design so you can explain
-                how the app grows into a production system.
+                Ongoing upkeep and punch-list items for homeowners and smaller
+                property maintenance needs.
               </p>
             </article>
           </div>
@@ -216,7 +218,7 @@ function App() {
         <section id="services" className="section">
           <div className="section-heading">
             <p className="eyebrow">Services</p>
-            <h2>Popular jobs homeowners want to price and schedule quickly.</h2>
+            <h2>Popular handyman services for everyday home needs.</h2>
           </div>
 
           {isLoading ? (
@@ -241,11 +243,10 @@ function App() {
         <section className="section split-layout">
           <div>
             <p className="eyebrow">How It Works</p>
-            <h2>A booking flow you can explain in both business and technical terms.</h2>
+            <h2>Simple scheduling from first message to finished job.</h2>
             <p className="supporting-copy">
-              Good portfolio projects do more than look clean. They show an
-              end-to-end user journey with state changes, API communication, and
-              persistence-friendly data structures.
+              Every project starts with clear job details, straightforward
+              communication, and a plan to get the work completed efficiently.
             </p>
           </div>
 
@@ -263,11 +264,10 @@ function App() {
         <section id="areas" className="section split-layout">
           <div>
             <p className="eyebrow">Service Areas</p>
-            <h2>Built for local search and fast trust-building.</h2>
+            <h2>Serving local homeowners and nearby communities.</h2>
             <p className="supporting-copy">
-              Local businesses need simple, specific signals. Service areas make
-              the site feel real, help the content read naturally, and give you
-              more realistic client data to structure.
+              If your project is in or near one of these areas, send the job
+              details and requested date to get started.
             </p>
           </div>
 
@@ -282,12 +282,11 @@ function App() {
 
         <section className="section split-layout">
           <div>
-            <p className="eyebrow">Customer Trust</p>
-            <h2>Testimonials come from the API so the UI is driven by data.</h2>
+            <p className="eyebrow">Customer Feedback</p>
+            <h2>Recent clients value clear communication and quality work.</h2>
             <p className="supporting-copy">
-              This gives you a clear interview talking point about fetch
-              lifecycles, serialization, and how static-looking sections still
-              benefit from backend structure.
+              SJM Handyman Services focuses on making the process smooth from
+              estimate to completion.
             </p>
           </div>
 
@@ -298,7 +297,7 @@ function App() {
                 <p className="customer">
                   {testimonial.customerName}, {testimonial.neighborhood}
                 </p>
-                <p className="rating">Rating: {testimonial.rating}/5</p>
+                <p className="rating">{testimonial.rating}/5</p>
               </article>
             ))}
           </div>
@@ -306,8 +305,8 @@ function App() {
 
         <section className="section trust-band">
           <div className="section-heading">
-            <p className="eyebrow">Built for Growth</p>
-            <h2>This can become a real business platform, not just a landing page.</h2>
+            <p className="eyebrow">What We Handle</p>
+            <h2>Practical services designed for real homes and real maintenance needs.</h2>
           </div>
           <div className="trust-grid">
             {trustPoints.map((point) => (
@@ -322,15 +321,14 @@ function App() {
           <div className="booking-panel">
             <div>
               <p className="eyebrow">Request an Estimate</p>
-              <h2>Send the details once and let SJM take it from there.</h2>
+              <h2>Tell us about the job and preferred timing.</h2>
               <p className="supporting-copy">
-                This form is intentionally useful for practice. You can later add
-                database persistence, admin views, email notifications, and job
-                status updates without changing the core contract.
+                Submit the form with your project details and SJM Handyman
+                Services will follow up to confirm the scope and next steps.
               </p>
               <div className="contact-block">
                 <span>Typical work:</span>
-                <strong>repairs, installs, patching, maintenance</strong>
+                <strong>repairs, installs, patching, mounting, and maintenance</strong>
               </div>
             </div>
 
